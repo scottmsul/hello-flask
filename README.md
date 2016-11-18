@@ -83,3 +83,25 @@ To run the server locally, use the following command.
 `heroku local web`
 
 ## Deployment
+
+First commit the current changes (added `requirements.txt` and `Procfile`).
+
+~~~
+git add -A
+git commit -m "added heroku files"
+~~~
+
+Push the changes to Heroku.
+
+~~~
+heroku login
+git remote add heroku https://git.heroku.com/scottmsul-hello-flask.git
+git push heroku master
+~~~
+
+Run the web app. Now we're all done!
+
+~~~
+heroku ps:scale web=1
+heroku open
+~~~
